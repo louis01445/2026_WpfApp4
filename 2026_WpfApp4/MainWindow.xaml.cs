@@ -20,5 +20,10 @@ namespace _2026_WpfApp4
         {
             InitializeComponent();
         }
+        private void OpenButton_click(object sender, RoutedEventArgs e)
+        {
+            Window1 newWindow1 = new Window1();
+            newWindow1.Show();
+        }
     }
 }

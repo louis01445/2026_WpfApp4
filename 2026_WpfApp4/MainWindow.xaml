@@ -6,5 +6,7 @@
         xmlns:local="clr-namespace:_2026_WpfApp4"
         mc:Ignorable="d"
         Title="Wpf小畫家" Height="450" Width="800">
-    
+    <Grid>
+        <Button x:Name="Open_Button" Content="開啟新文件" HorizontalAlignment="Left" Margin="279,122,0,0" VerticalAlignment="Top" Height="95" Width="123" FontSize="22" Click="OpenButton_click"></Button>
+    </Grid>
 </Window>
