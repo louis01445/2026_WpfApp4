@@ -11,7 +11,7 @@
         <CommandBinding Command="ApplicationCommands.New" Executed="NewCommands_Executed"/>
         <CommandBinding Command="ApplicationCommands.Open" Executed="OpenCommandBinding_Executed"/>
         <CommandBinding Command="ApplicationCommands.Save" Executed="SaveCommands_Executed"/>
-    </Window.CommandBindings>   
+    </Window.CommandBindings>
     <DockPanel>
         <ToolBarTray Height="40" Background="Aqua" DockPanel.Dock="Top" Width="796">
             <ToolBar x:Name="ApplicationToolbar" Height="40" Background="#FF00B3FF" Margin="0,0,-10,0">
@@ -24,27 +24,27 @@
                 <Button x:Name="Savebutton" Height="32" Width="32" Command="ApplicationCommands.Save">
                     <Image Height="32" Width="32" Source="C:\Users\USER\source\repos\2026_WpfApp4\2026_WpfApp4\img\save.png" />
                 </Button>
-                <Button x:Name="Trashbutton" Height="32" Width="38" >
+                <Button x:Name="Trashbutton" Height="32" Width="38" Click="Trashbutton_Click" >
                     <Image Height="32" Width="38" Source="C:\Users\USER\source\repos\2026_WpfApp4\2026_WpfApp4\img\trash.png" />
                 </Button>
             </ToolBar>
-            <ToolBar x:Name="EditingToolbar" Height="40" Background="#FF0FFFCE" Width="612">
-                <ToggleButton x:Name="Boldbutton" Height="38" Width="38">
+            <ToolBar x:Name="EditingToolbar" Height="40" Background="#FF0FFFCE" Margin="0,0,100,0">
+                <ToggleButton x:Name="Boldbutton" Height="38" Width="38" Command="EditingCommands.ToggleBold">
                     <Image Height="32" Width="38" Source="C:\Users\USER\source\repos\2026_WpfApp4\2026_WpfApp4\img\bold.png" />
                 </ToggleButton>
-                <ToggleButton Height="38" Width="38" x:Name="Italicbutton">
+                <ToggleButton Height="38" Width="38" x:Name="Italicbutton" Command="EditingCommands.ToggleItalic">
                     <Image Height="32" Width="32" Source="C:\Users\USER\source\repos\2026_WpfApp4\2026_WpfApp4\img\italic.png" />
                 </ToggleButton>
-                <ToggleButton x:Name="Underlinebutton" Height="38" Width="38">
+                <ToggleButton x:Name="Underlinebutton" Height="38" Width="38" Command="EditingCommands.ToggleUnderline">
                     <Image Height="32" Width="28" Source="C:\Users\USER\source\repos\2026_WpfApp4\2026_WpfApp4\img\underline.png" />
                 </ToggleButton>
-                <xctk:ColorPicker x:Name="FontColorPicker" Width="160" Height="38"/>
-                <ComboBox x:Name="FontFamilyCombobox" HorizontalAlignment="Left" VerticalAlignment="Center" Width="150" Height="38" Margin="5, 0 ,0 ,0"/>
-                <ComboBox x:Name="FontsizeCombobox" HorizontalAlignment="Left" VerticalAlignment="Center" Width="150" Height="38" Margin="5, 0 ,0 ,0"/>
+                <xctk:ColorPicker x:Name="FontColorPicker" Width="160" Height="38" SelectedColorChanged="FontColorPicker_SelectedColorChanged" />
+                <ComboBox x:Name="FontFamilyCombobox" HorizontalAlignment="Left" VerticalAlignment="Center" Width="150" Height="38" Margin="5, 0 ,0 ,0" SelectionChanged="FontFamilyCombobox_SelectionChanged"/>
+                <ComboBox x:Name="FontsizeCombobox" HorizontalAlignment="Left" Width="60" Height="38" SelectionChanged="FontsizeCombobox_SelectionChanged"/>
             </ToolBar>
         </ToolBarTray>
         <StatusBar Height="30" DockPanel.Dock="Bottom" Background="LightGray"/>
-        <RichTextBox x:Name="MainRichTextbox" Background="Red">
+        <RichTextBox x:Name="MainRichTextbox" Background="Red" SelectionChanged="MainRIchTextBox_">
             <FlowDocument/>
         </RichTextBox>
     </DockPanel>
